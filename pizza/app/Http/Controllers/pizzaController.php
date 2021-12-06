@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\pizza;
 use Illuminate\Support\Facades\DB;
 
-class pizzaController extends Controller
+class PizzaController extends Controller
 {
     public function index(){
 
@@ -19,7 +19,7 @@ class pizzaController extends Controller
         $pizzas = pizza::all();
 
         // dd($pizzas); //to check your query
-        return view('pizza', [
+        return view('pizzas.index', [
             'pizzas' => $pizzas,
         ]);
     }
@@ -28,7 +28,14 @@ class pizzaController extends Controller
     
     //use $id variable to query the db for a record
 
-    return view('details', ['id' => $id]);
+        $pizzas = pizza::find($id);
 
+    return view('pizzas.show', ['pizzas'=> $pizzas]);
+
+    }
+
+    public function create(){
+
+        return view('pizzas.create');
     }
 }

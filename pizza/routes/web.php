@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 $p = 'App\Http\Controllers';
 
-Route::get('pizza', $p.'\pizzaController@index');
+Route::get('pizzas', $p.'\PizzaController@index');
+Route::get('pizzas/create', $p.'\PizzaController@create');
+Route::get('pizzas/{id}', $p.'\PizzaController@show'); //view with {id} must define at the last cause it is the same pizzas/[filename] format
 
-Route::get('/pizza/{id}', $p.'\pizzaController@show');
+

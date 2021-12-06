@@ -1,5 +1,5 @@
 @extends('layouts/layout')
 
 @section('content')
-    <p>This number is {{$id}} from URL</p>
+    <p>This Page has been created</p>
 @endsection
