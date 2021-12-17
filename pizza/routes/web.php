@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 $p = 'App\Http\Controllers';
 
-Route::get('pizzas', $p.'\PizzaController@index');
-Route::get('pizzas/create', $p.'\PizzaController@create');
-Route::get('pizzas/{id}', $p.'\PizzaController@show'); //view with {id} must define at the last cause it is the same pizzas/[filename] format
-
+Route::get('/', $p.'\PizzaController@home');
+Route::get('/pizzas', $p.'\PizzaController@index');
+Route::post('/pizzas', $p.'\PizzaController@store');//for interact with db
+Route::get('/pizzas/create', $p.'\PizzaController@create');
+Route::get('/pizzas/{id}', $p.'\PizzaController@show'); //view with {id} must define at the last cause it is the same pizzas/[filename] format
+Route::delete('/pizzas/{id}', $p.'\PizzaController@destroy'); //delete a record
 
