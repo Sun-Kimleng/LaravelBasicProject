@@ -1,134 +1,217 @@
-body{
-    color: black;
+body {
+  color: black;
 }
 
-.create_pizza{
-    width: 60%;
-    margin: 0 auto;
+.create_pizza {
+  width: 60%;
+  margin: 0 auto;
 }
 
-footer{
-    display:block;
-    color: grey;
-    margin-top: 100px;
-    z-index: 2;
-    clear:both;
+footer {
+  display: block;
+  color: grey;
+  margin-top: 100px;
+  z-index: 2;
+  clear: both;
 }
 
-.footerBackground{
-    color: black;
-    background-color: #f09846 !important;
-    width: 100%;
+.footerBackground {
+  color: black;
+  background-color: #f09846 !important;
+  width: 100%;
 }
 
-
-.logo{
-    width: 30%;
-    Margin: 0 auto;
-    margin-top: 60px;
-    display: block;
+.logo {
+  width: 30%;
+  Margin: 0 auto;
+  margin-top: 60px;
+  display: block;
 }
 
-.orderPizza-link{
-    display: block;
-    width: 120px;
-    margin: 0 auto;
-    text-decoration: none;
-    Color: Black;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.orderPizza-link {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  text-decoration: none;
+  Color: Black;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.form-errors{
-    color: red !important;
-}
-.main-card{
-    display: block !important;
-    margin: 0 auto;
-    width: 90% !important;
-}
-.cardd{
-    
-    display: block !important;
-    float: left;
-    margin-right: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 2px solid black !important;
-    width: 350px !important;
-    height: 200px !important;
-    transition: 0.3s;
-    cursor:pointer;
-}
-.cardd:hover{
-   
-    transform: rotate(-3deg);
+.form-errors {
+  color: red !important;
 }
 
-
-
-#popBtn{
-    margin-top: 40px;
-    display: block;
+.main-card {
+  display: block !important;
+  margin: 0 auto;
+  width: 90% !important;
 }
 
-
-.pop{
-    background-color: rgb(2, 3, 3, 0.7); /*instead of using opacity*/
-    display: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 150%;
-    z-index: 99;
+.cardd {
+  display: block !important;
+  float: left;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black !important;
+  width: 350px !important;
+  height: 200px !important;
+  transition: 0.1s;
+  cursor: pointer;
 }
 
-.pop-form{
-    display: block;
-    background: white;
-    width: 80%;
-    margin: 0 auto;
-    padding: 40px;
-    margin-top: 30px;
-    
-   
-}
-.closeForm{
-    display: block;
-    float: right;                                  
-    cursor: pointer;
-    
-}
-.closeForm:hover{
-    opacity: 0.7;
+.cardd:hover {
+  transform: rotate(-2deg);
 }
 
-.popAnimation{
-    animation-name: pop;
-    animation-duration: 0.5s;
+#popBtn {
+  margin-top: 40px;
+  display: block;
 }
-.downAnimation{
-    animation-name: down;
-    animation-duration: 1s;
-}   
+
+.pop {
+  background-color: rgba(2, 3, 3, 0.7);
+  /*instead of using opacity*/
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.pop-form {
+  display: block;
+  background: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 100px;
+}
+
+.closeForm {
+  display: block;
+  float: right;
+  cursor: pointer;
+}
+
+.closeForm:hover {
+  opacity: 0.7;
+}
+
+.popAnimation {
+  -webkit-animation-name: pop;
+          animation-name: pop;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.downAnimation {
+  -webkit-animation-name: down;
+          animation-name: down;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes pop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes pop {
-    0%{
-        
-        opacity: 0;
-    }
-    100%{
-        
-        opacity: 1;
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-    }
+.navCus{
+  background: orange !important;
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+  
+.nav-link{
+  color:black !important;
+  
+}
+.links{
+  background: Black !important;
+  margin-right: 7px;
+  color: white !important;
+  padding: 8px !important;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.links:hover{
+  opacity: 0.85;
+}
+
+.login2-form{
+  margin:0 auto;
+  width: 40%;
+  padding: 30px;
+  background-color: #f5c37d;
+  border-radius: 4px;
+  
+}
+.signinBtn{
+  width:100%;
+}
+.showw{
+  display:block !important;
+}
+
+.dropdown{
+  position: relative;
+  
+}
+
+.dropdown-menu{
+  left: -140px !important;
+  display: block;
+  
 }
 
 
-
-
-
-
+.hh{
+  border: none !important;
+  height: 38px;
+}
+/*800px*/
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .login2-form{
+    width: 80%;
+  }
+}
+/*500px*/
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .login2-form{
+    width: 80% !important;
+  }
+  .hh{
+    border: none !important;
+    height: 34px;
+  }
+  .links{
+    
+    color: white !important;
+    font-size: 10px;
+  }
+}
 
 

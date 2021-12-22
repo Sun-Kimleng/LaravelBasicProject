@@ -1,6 +1,7 @@
 @extends('layouts/layout')
 
-@section('content')
+
+@section('contents')
 <div class="create_pizza">
     <form action="/pizzas" method="POST">
         @csrf

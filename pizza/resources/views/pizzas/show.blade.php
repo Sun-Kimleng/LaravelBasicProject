@@ -1,6 +1,6 @@
 @extends('layouts/layout')
 
-@section('content')
+@section('contents')
     <h1 class="text-center" style="color: #f09846; font-size: 60px;">THIS IS YOUR ORDER</h1>
     <div class="wrapper pizza-detail text-center">
         <h3>Name</h3>

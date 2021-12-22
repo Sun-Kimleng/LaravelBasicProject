@@ -1,15 +1,16 @@
 //popup form (file index.blade.php)
-btnOpen = document.querySelector("#popBtn");
-btnClose = document.querySelector(".closeForm");
-btnPizza = document.querySelector(".btnPizza")
-windowClose = document.querySelector(".pop");
+var btnOpen = document.querySelector("#popBtn");
+var btnClose = document.querySelector(".closeForm");
+var btnPizza = document.querySelector(".btnPizza");
+var windowClose = document.querySelector(".pop");
+var windowClose2 = document.querySelector(".wrappedDrop");
+
+
 
     btnOpen.addEventListener('click', function(){
         // if(event.target == x){
         document.querySelector('.pop').style.display="block";
         document.querySelector('#abc').classList.toggle("popAnimation");
-        ;
-        
         
     });
     btnClose.addEventListener('click', function(){
@@ -25,8 +26,35 @@ windowClose = document.querySelector(".pop");
             document.querySelector('.pop').style.display="none";
             document.querySelector('#abc').classList.toggle("popAnimation");
         }
+        
+        
     });
-    //submit
-    
 
     
+    function showw(){
+        document.querySelector('.Dropmenu').classList.toggle('showw');
+    }
+
+    window.onclick = function(e){
+    if(!e.target.matches('.hh')){
+        var myDropdown = querySelector("#Dropmenu");
+        if(myDropdown.classList.contains('showw')){
+            document.querySelector('.Dropmenu').classList.remove('showw');
+            }
+        }
+    } 
+
+//pop up dropdown menu (layout.blade.php)
+
+
+
+
+
+
+
+
+
+
+
+
+

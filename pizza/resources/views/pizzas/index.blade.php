@@ -1,6 +1,6 @@
 @extends('layouts/layout')
 
-@section('content')
+@section('contents')
 
 <div class="main-card">
     <button class="btn btn-warning" id ="popBtn">PLACE MORE ORDER</button>

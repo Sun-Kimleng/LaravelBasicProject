@@ -6,10 +6,58 @@
     <title>Pizza</title>
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
 <body>
+
+<div class="navbar navCus">
+<ul class="nav nav-pills">
+  
+  <li class="nav-item">
+    <a class="nav-link" href="/"style="font-size: 20px;">Pizzahouse</a>
+  </li>
+</ul>
+  <ul class="nav justify-content-end">
+
+ 
+  <li class="nav-item">
+    <a class="nav-link links" href="{{route('register2')}}">Register</a>
+  </li>
+  @if(!session()->has('logged'))
+  <li class="nav-item">
+    <a class="nav-link links" href="{{route('login2')}}">Login</a>
+  </li>
+  @endif
+<div class="nav-item dropdown ">
+  <button class="hh nav-link links " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" >
+    <i class="fa fa-caret-down"></i>
+  </button>
+  
+  <ul class="dropdown-menu">
     
-    @yield('content')
+    @if(session()->has('logged'))
+    <li><a class="dropdown-item" href="">{{$logged['name']??'logged'}}</a></li>
+    <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+    @else
+    <li><a class="dropdown-item" href="">Not login</a></li>
+    @endif
+  </ul>
+  
+</div>
+
+</div>
+
+</ul>
+</div>
+
+ 
+<br /><br />
+<!-- HEADER -->
+
+    @yield('contents')
+
+
+<!-- FOOTER -->    
 <br /><br />
 <footer class="card text-center footerBackground">
 <div class="card-body container">
@@ -46,6 +94,7 @@ TmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
 </body>
 
 </html>

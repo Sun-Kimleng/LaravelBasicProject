@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\pizza;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class PizzaController extends Controller
 {
     public function home(){
-        return view('welcome');
+        $data = [
+            'logged' => User::where('id','=', session('logged'))->first(),
+        ];
+        return view('welcome', $data);
     }
 
     public function index(){
@@ -20,11 +24,14 @@ class PizzaController extends Controller
 
         // $pizzas = DB::select('select * from pizza');
 
-        $pizzas = pizza::all();
+        $pizzas = pizza::all(); 
+
+        $logged = User::where('id','=', session('logged'))->first();
 
         // dd($pizzas); //to check your query
-        return view('pizzas.index', [
+        return view('pizzas/index', [
             'pizzas' => $pizzas,
+            'logged'=> $logged,
         ]);
     }
 
@@ -34,14 +41,15 @@ class PizzaController extends Controller
 
         $pizza = pizza::findOrFail($id);
         
+            $logged = User::where('id','=', session('logged'))->first();
         
-        return view('pizzas.show', ['pizza'=>$pizza]);
+        return view('pizzas.show', ['pizza'=>$pizza, 'logged'=> $logged]);
 
     }
 
     public function create(){
-
-        return view('pizzas.create');
+        $logged = User::where('id','=', session('logged'))->first();
+        return view('pizzas.create', ['logged'=> $logged]);
     }
 
     public function store(Request $request){
